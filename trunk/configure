@@ -2668,7 +2668,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=batmeth
- VERSION=1.01_mmx
+ VERSION=1.02_mmx
 
 
 cat >>confdefs.h <<_ACEOF

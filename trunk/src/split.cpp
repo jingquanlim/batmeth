@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <cstdlib>
 #include <string>
+#include "limits.h"
 
 
 #define MAX_HITS_ALLOWED 251
