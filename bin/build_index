@@ -1,0 +1,60 @@
+#!/bin/sh
+echo -= Index Builder for Methylation =-
+SCRPATH=$(cd ${0%/*} && echo $PWD/${0##*/})
+CPATH=`dirname "$SCRPATH"`
+INDEXTYPE=x
+BASEX=$1
+
+if [ "$2" = "color" ]
+then
+	echo Building Color-Space index
+	$CPATH/filter.pl $1 >$1.Filter
+	$CPATH/b2c.pl $1.Filter $1C
+	rm $1.Filter
+	BASEX=$1C
+elif [ "$2" = "CTOT" ]
+then
+	INDEXTYPE=c
+	BASEX=$1-CtoT
+elif [ "$2" = "GTOA" ]
+then
+	INDEXTYPE=g
+	BASEX=$1-GtoA
+fi
+
+echo Stripping $1 and filtering nucleotides...
+echo $CPATH/filter $1 $INDEXTYPE  gt $BASEX.non
+$CPATH/filter $1 $INDEXTYPE >$BASEX.non
+BASE=$BASEX
+BASEPATH=`dirname $BASE`
+BASENAME=${BASE##*/}
+revBASE=`echo $BASEPATH/rev$BASENAME`
+
+echo Creating FASTA file of Reverse of the Genome...
+echo ">" > $revBASE
+$CPATH/reverse -i $1.bin -b 10000000 >> $revBASE
+
+echo Creating FM index of reverse genome...
+$CPATH/bwtformatdb $revBASE
+
+rm $revBASE
+rm $revBASE.amb
+rm $revBASE.ann
+rm $revBASE.pac
+rm $revBASE.sai
+
+echo Creating FM index of the genome...
+$CPATH/bwtformatdb $BASE.non
+rm $BASE.non
+echo Deleting auxilliary files...
+mv $BASE.non.fmv $BASE.fmv
+mv $BASE.non.bwt $BASE.bwt
+mv $BASE.non.sa $BASE.sa
+mv $BASE.non.ann $BASE.ann
+
+rm $BASE.non.amb
+rm $BASE.non.pac
+rm $BASE.non.sai
+
+$CPATH/ann2loc.pl $BASE.ann
+rm $BASE.ann
