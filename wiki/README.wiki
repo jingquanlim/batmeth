@@ -1,0 +1,44 @@
+#summary One-sentence summary of this page.
+
+<wiki:toc max_depth="1" />
+
+=Installation=
+
+
+To install the package, do the following.
+  # untar the package:
+{{{
+tar -zxvf batmethxxxx
+}}}
+  # change to installation directory batmetxxxx
+{{{
+cd batmethxxxx
+}}}
+  # Configure and Install
+{{{
+      ./configure
+      make
+      make copy
+}}}
+
+=Building Indexes.=
+
+
+Three sets of indexes needs to be built. They are built by calling build_index as follows.
+  # build_index Base_Name GTOA
+  # build_index Base_Name CTOT
+  # build_index Base_Name
+
+1) will turn all G's to A's and build an index with the base name Base_Name-GtoA
+2) will turn all C's to T's and build an index with the base name Base_Name-CtoT
+
+To build the required indexes and delete unwanted files run the script Build_All
+
+=Mapping=
+
+
+To map the data set METH to the genome with base name GENOME do,
+{{{
+batmeth -g GENOME -i METH -n <number of mismatches> -o <Output_File>
+split <Output_File> GENOME <number of mismatches> y <Final_result>
+}}}
