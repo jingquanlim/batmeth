@@ -305,9 +305,9 @@ int main(int argc, char* argv[])
 			printf(Err);
 			exit(-1);
 		}
-		printf("Met_loc / Non-Met_loc : %u/%u\n ", met_cnt,non_met_cnt);
+		printf("@>\nMet_loc / Non-Met_loc : %u\t%u\n ", met_cnt,non_met_cnt);
 		printf("Methylation Rate : %.01f \n",(float(non_met_cnt)*100)/float((non_met_cnt+met_cnt)));
-		printf("Total Reads/Total mapped/Total uniqu mapped : %u/%u/%u \n",Total_Reads,Tot_Unique_Org,Tot_Unique_Remdup);
+		printf("Total Reads/Total mapped/Total uniqu mapped : %u\t%u\t%u \n",Total_Reads,Tot_Unique_Org,Tot_Unique_Remdup);
 
 		time(&End_Time);printf("Time Taken  - %.0lf Seconds ..\n ",difftime(End_Time,Start_Time));
 	}
