@@ -27,7 +27,6 @@ cd batmethxxxx
 Three sets of indexes needs to be built. They are built by calling build_index as follows.
   # build_index Base_Name GTOA
   # build_index Base_Name CTOT
-  # build_index Base_Name
 
 1) will turn all G's to A's and build an index with the base name Base_Name-GtoA
 2) will turn all C's to T's and build an index with the base name Base_Name-CtoT
