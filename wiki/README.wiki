@@ -32,7 +32,7 @@ Three sets of indexes needs to be built. They are built by calling build_index a
 
 2) will turn all C's to T's and build an index with the base name GENOME-CtoT
 
-To build the required indexes and delete unwanted files run the script Build_All
+# To build the required indexes and delete unwanted files run the script Build_All
 
 =Mapping=
 
