@@ -16,15 +16,16 @@ cd batmethxxxx
 }}}
   # Configure and Install
 {{{
-      ./configure
-      make
-      make copy
+./configure
+make
+make copy
 }}}
 
 =Building Indexes.=
 
+All executables of this package can be found in batmethxxxx/bin folder after {{{make copy}}}.
 
-Three sets of indexes needs to be built. They are built by calling build_index as follows.
+Two sets of indexes needs to be built. They are built by calling build_index as follows.
   # build_index GENOME GTOA
   # build_index GENOME CTOT
 
@@ -32,7 +33,7 @@ Three sets of indexes needs to be built. They are built by calling build_index a
 
 2) will turn all C's to T's and build an index with the base name GENOME-CtoT
 
-# To build the required indexes and delete unwanted files run the script Build_All
+# To build the required indexes and delete unwanted files run the script `build_all`
 
 =Mapping=
 
@@ -42,3 +43,14 @@ To map the data set METH to the genome with base name GENOME do,
 batmeth -g GENOME -i METH -n <number of mismatches> -o <Output_File>
 split <Output_File> GENOME <number of mismatches> y <Final_result>
 }}}
+
+=Output=
+
+{{{<Final_result>}}} will contain all uniquely mapped hits (after PCR duplicated removal) in the following format:
+  Line 1: `Header`
+
+  Line 2: `<read_ID> <Original Read>`
+
+  Line 3: `<read-orientation> <chrNum> <strand> <chrPos_0> <mismatch> <read_length>`
+
+Please ignore the other fields which are appended to the end of the lines.
