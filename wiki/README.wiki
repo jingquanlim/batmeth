@@ -1,4 +1,3 @@
-#summary One-sentence summary of this page.
 #labels Featured
 
 <wiki:toc max_depth="1" />
@@ -55,3 +54,7 @@ split <FINAL_RESULT> GENOME <number of mismatches> y <all...output...files...fro
   Line 3: `<read-orientation> <chrNum> <strand> <chrPos_0> <mismatch> <read_length>`
 
 Please ignore the other fields which are appended to the end of the lines.
+
+=Sample Run=
+[linux]$ .batmeth -g genome.fa -i query.fa -n 2 -p 4 -O 1
+[linux]$ .split output.out genome.fa 2 y query.fa.0 query.fa.1 query.fa.2 query.fa.3
