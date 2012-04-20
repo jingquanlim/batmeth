@@ -44,7 +44,7 @@ split <FINAL_RESULT> GENOME <number of mismatches> n <all...output...files...fro
 
   Line 3: `<read-origin> <chrNum> <strand> <chrPos_0> <mismatch <read_length> <Color read in base space> <genomic reference region>`
 
-<read-origin> is a number from [1..4]. {1,3} means the read is mapped to the + strand and {2,4} means otherwise. Hits labelled with {1,4} are from fully-converted genomes while those labelled with {2,3} are from non-CpG converted genomes.
+ {{{<read-origin>}}} is a number from [1..4]. {1,3} means the read is mapped to the + strand and {2,4} means otherwise. Hits labelled with {1,4} are from fully-converted genomes while those labelled with {2,3} are from non-CpG converted genomes.
 
 Please ignore the other fields which are appended to the end of the lines.
 
