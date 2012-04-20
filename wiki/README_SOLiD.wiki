@@ -6,11 +6,11 @@
 To install the package, do the following.
   # untar the package:
 {{{
-tar -zxvf batmethxxxx
+tar -zxvf batmethxxxx_SOLiD
 }}}
-  # change to installation directory batmetxxxx
+  # change to installation directory batmetxxxx_SOLiD
 {{{
-cd batmethxxxx
+cd batmethxxxx_SOLiD
 }}}
   # Configure and Install
 {{{
@@ -24,14 +24,7 @@ make copy
 All executables of this package can be found in batmethxxxx/bin folder after {{{make copy}}}.
 
 Two sets of indexes needs to be built. They are built by calling build_index as follows.
-  # build_index GENOME GTOA
-  # build_index GENOME CTOT
-
-1) will turn all G's to A's and build an index with the base name GENOME-GtoA
-
-2) will turn all C's to T's and build an index with the base name GENOME-CtoT
-
-# To build the required indexes and delete unwanted files run the script `build_all GENOME`
+  # build_meth GENOME
 
 =Mapping=
 
@@ -54,4 +47,4 @@ split <FINAL_RESULT> GENOME <number of mismatches> n <all...output...files...fro
 Please ignore the other fields which are appended to the end of the lines.
 
 =Sample Run=
-{{{[linux]$ .batmeth -g genome.fa -i query.fa -n 4 -N 0 -p 4 -o tmp}}}<br>{{{[linux]$ .split output.out genome.fa 2 n tmp.0 tmp.1 tmp.2 tmp.3}}}
+{{{[linux]$ .batmeth -g genome.fa -i query.fa -n 4 -N 0 -p 4 -o tmp}}}<br>{{{[linux]$ .split output.out genome.fa 3 n tmp.0 tmp.1 tmp.2 tmp.3}}}
