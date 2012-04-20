@@ -1,0 +1,57 @@
+<wiki:toc max_depth="1" />
+
+=Installation=
+
+
+To install the package, do the following.
+  # untar the package:
+{{{
+tar -zxvf batmethxxxx
+}}}
+  # change to installation directory batmetxxxx
+{{{
+cd batmethxxxx
+}}}
+  # Configure and Install
+{{{
+./configure
+make
+make copy
+}}}
+
+=Building Indexes.=
+
+All executables of this package can be found in batmethxxxx/bin folder after {{{make copy}}}.
+
+Two sets of indexes needs to be built. They are built by calling build_index as follows.
+  # build_index GENOME GTOA
+  # build_index GENOME CTOT
+
+1) will turn all G's to A's and build an index with the base name GENOME-GtoA
+
+2) will turn all C's to T's and build an index with the base name GENOME-CtoT
+
+# To build the required indexes and delete unwanted files run the script `build_all GENOME`
+
+=Mapping=
+
+
+To map the data set METH to the genome with base name GENOME do,
+{{{
+batmeth -g GENOME -i INPUT_METH -n <#mismatch on fully-converted genome> -N <#mismatch on non-CpG-converted genome> -o <Output_Prefix>
+split <FINAL_RESULT> GENOME <number of mismatches> n <all...output...files...from...batmeth...>
+}}}
+
+=Output=
+
+{{{<Final_result>}}} will contain all uniquely mapped hits in the following format:
+  Line 1: `Header`
+
+  Line 2: `<read_ID> <Original Read>`
+
+  Line 3: `<read-orientation> <chrNum> <strand> <chrPos_0> <mismatch <read_length> <Color read in base space> <genomic reference region>`
+
+Please ignore the other fields which are appended to the end of the lines.
+
+=Sample Run=
+{{{[linux]$ .batmeth -g genome.fa -i query.fa -n 4 -N 0 -p 4 -o tmp}}}<br>{{{[linux]$ .split output.out genome.fa 2 n tmp.0 tmp.1 tmp.2 tmp.3}}}
