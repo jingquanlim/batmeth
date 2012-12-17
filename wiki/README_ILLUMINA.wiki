@@ -39,8 +39,8 @@ Two sets of indexes needs to be built. They are built by calling build_index as 
 
 To map the data set METH to the genome with base name GENOME do,
 {{{
-batmeth -g GENOME -i INPUT_METH -n <number of mismatches> -o <Output_Prefix>
-split <FINAL_RESULT> GENOME <number of mismatches> y <all...output...files...from...batmeth...>
+./batmeth -g GENOME -i INPUT_METH -n <number of mismatches> -o <Output_Prefix>
+./split <FINAL_RESULT> GENOME <number of mismatches> y <all...output...files...from...batmeth...>
 }}}
 
 =Output=
