@@ -52,6 +52,8 @@ To map the data set METH to the genome with base name GENOME do,
 
   Line 3: `<read-orientation> <chrNum> <strand> <chrPos_0> <mismatch> <read_length>`
 
+`<read-orientation>` is an integer: [1-4]. 1 & 3 has the read and reverse-complement of the read mapped to a C->T converted reference respectively. 2 & 4 will have its read and reverse-complement of the read mapped to a G->A converted reference respectively.
+
 Please ignore the other fields which are appended to the end of the lines.
 
 =Sample Run=
