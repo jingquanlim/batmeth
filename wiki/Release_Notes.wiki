@@ -7,3 +7,5 @@ Added a per-base methylation information string to each hit (BatMeth-Illumina ve
 Fixed some issues that prevent smooth compiling in various Linux platforms.
 
 Added the ability to handle genomes with an arbitrary number of chromosomes.
+
+For BatMeth_SOLiD_1.04, have changed default mapping length to 36. Can be changed by -F <integer> option.
