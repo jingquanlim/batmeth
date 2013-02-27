@@ -8,4 +8,4 @@ Fixed some issues that prevent smooth compiling in various Linux platforms.
 
 Added the ability to handle genomes with an arbitrary number of chromosomes.
 
-For BatMeth_SOLiD_1.04, default mapping read_length is changed to 36bp. Can be changed by -F <integer> option.
+For BatMeth_SOLiD_1.04, default mapping read_length is changed to 36bp. Can be changed by {{{-F <integer>}}}} option.
