@@ -50,4 +50,7 @@ To map the data set METH to the genome with base name GENOME do,
 Please ignore the other fields which are appended to the end of the lines.
 
 =Sample Run=
-{{{[linux]$ .batmeth -g genome.fa -i query.fa -n 4 -N 0 -p 4 -o tmp}}}<br>{{{[linux]$ .split output.out genome.fa 3 n tmp.0 tmp.1 tmp.2 tmp.3}}}
+{{{[linux]$ ./batmeth -g genome.fa -i query.fa -n 4 -N 0 -p 4 -o tmp}}}<br>{{{[linux]$ ./split output.out genome.fa 3 n tmp.0 tmp.1 tmp.2 tmp.3}}}
+
+=Note on Input format=
+SOLID reads usually have their reads and qualities stored in two files. BatMeth requires input to be in csfasta or csfastq (similar to fastq).
