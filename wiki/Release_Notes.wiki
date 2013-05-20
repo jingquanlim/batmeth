@@ -2,7 +2,7 @@
 #Release_Notes
 
 ===Next Version===
-Fixed Total_Read count output to display.
+Fixed Total Read count output to display.
 
 
 ===Version 1.04b===
