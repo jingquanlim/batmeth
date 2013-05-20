@@ -1,6 +1,10 @@
 #labels Featured
 #Release_Notes
 
+===Next Version===
+Fixed Total_Read count output to display.
+
+
 ===Version 1.04b===
 Added a per-base methylation information string to each hit (BatMeth-Illumina version). Please read wiki page for BatMeth-Illumina for more details. [http://code.google.com/p/batmeth/wiki/README_ILLUMINA]
 
