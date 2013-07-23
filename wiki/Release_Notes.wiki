@@ -1,9 +1,11 @@
 #labels Featured
 #Release_Notes
 
+===Note===
+BatMeth scans up to 5 mismatches per read. If the rate of mismatch in the read is high, we recommend you to try the -F option which trims a read from the 3' end prior to mapping.
+
 ===Next Version===
 Fixed Total Read count output to display.
-
 
 ===Version 1.04b===
 Added a per-base methylation information string to each hit (BatMeth-Illumina version). Please read wiki page for BatMeth-Illumina for more details. [http://code.google.com/p/batmeth/wiki/README_ILLUMINA]
