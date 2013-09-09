@@ -25,8 +25,8 @@ make copy
 All executables of this package can be found in batmethxxxx/bin folder after {{{make copy}}}.
 
 Two sets of indexes needs to be built. They are built by calling build_index as follows.
-  # build_index GENOME GTOA
-  # build_index GENOME CTOT
+  # build_index <GENOME> GTOA
+  # build_index <GENOME> CTOT
 
 1) will turn all G's to A's and build an index with the base name GENOME-GtoA
 
