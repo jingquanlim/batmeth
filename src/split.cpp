@@ -45,7 +45,7 @@ unsigned Tot_Unique_Org=0;//total unique hits obtained
 unsigned Tot_Unique_Remdup=0;//total unique hits obtained after removing dups...
 unsigned met_cnt=0;
 unsigned non_met_cnt=0;
-bool REMOVE_DUP=true; //true to removeDup, false will not remove PCR-dup
+bool REMOVE_DUP=false; //true to removeDup, false will not remove PCR-dup
 unsigned Mismatch_Qual[255][255][255]; //[readLength][255][255]
 
 //}-----------------------------   GLOBAL VARIABLES  -------------------------------------------------
